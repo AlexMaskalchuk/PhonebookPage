@@ -1,0 +1,63 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Phonebook</title>
+		<script src="jsf.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">    
+	</head>
+	<body>
+		<div id = "main">
+		<form action="#" class="registration">
+			<h2>Phonebook</h2>
+			<div class="input-field">
+				<label for="phone">Enter phone like 380xxxxxxxxx</label>
+			<input required type="tel" id = "phone" onchange="valid_phone(this.value,this.id)"
+				   value ="380"  placeholder="380xxxxxxxxx"
+				   pattern="[380][0-9]{11}">
+				<label id = "label-phone" for="phone"></label>
+			</div>
+			<div class="input-field">
+				<label for="email">E-mail</label>
+			<input required type="email" onchange="valid_email(this.value,this.id)" id = "email" placeholder=" E-mail">
+				<label id = "label-email" for="email"></label>
+			</div>
+			<div class="input-field">
+				<label for="password">Password</label>
+		    <input required type="password" onchange="valid_password(this.value,this.id)" id = "password" placeholder=" Password"
+				pattern="^[a-zA-Z]+$"minlength="8" maxlength="16">
+				<label id = "label-password" for="password"></label>
+			</div>
+			<div class="input-field">
+		    <input type="submit" value="Add" name="add" onclick="add_user()">
+			</div>
+		</form>
+
+		<div class="modal" id="modal">
+			<div class="modal-content">
+					<span class="close">×</span>
+					<h2>Edit profile</h2>
+					<div class="input-field">
+						<label for="p">Enter phone like 380xxxxxxxxx</label>
+					<input required type="tel" id = "p" placeholder=" Phone" onchange="valid_phone(this.value,this.id)" pattern="[380][0-9]{11}" >
+						<label id = "label-p" for="p"></label>
+					</div>
+					<div class="input-field">
+					<label for="e">E-mail</label>
+					<input required type="email" id = "e" placeholder=" E-mail" onchange="valid_email(this.value,this.id)">
+						<label id = "label-e" for="e"></label>
+					</div>
+				<div class="input-field">
+					<label for="pas">Password</label>
+					<input required type="password" id = "pas" placeholder=" Password" onchange="valid_password(this.value,this.id)" pattern="^[a-zA-Z]+$"minlength="8" maxlength="16">
+					<label id = "label-pas" for="pas"></label>
+				</div>
+				<div class="input-field">
+					<input type="submit" value="Save" id = "save-button" name="add" onclick="">
+				</div>
+			</div>
+			<div class="modal-overlay" id="modal-overlay"></div>
+		</div>
+		</div>
+	</body>
+</html>
